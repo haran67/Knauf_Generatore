@@ -1,0 +1,13 @@
+;;E [N/mm2];r [N/m2/mm];fd [N/mm2]
+1;Fireboard;2800;8,3;7,0
+2;Vidiwall;2900;12,0;7,0
+3;Aquapanel outdoor;5000;14,0;6,9
+4;Aquapanel New Indoor;5000;8,8;6,2
+5;GKB;2200;6,8;5,5
+6;GKF;2600;8,7;5,5
+7;GKI;2200;7,0;5,5
+8;Diamant;3900;11,0;7,5
+9;Nessuna;1;0,0;0,0
+10;Silentboard;2600;14,4;5,5
+11;Vidiphonic;2900;14,0;7,0
+12;Kasa;2200;8,6;5,5

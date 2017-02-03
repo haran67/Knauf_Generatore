@@ -1,0 +1,150 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Page.Master.cs" Inherits="Generatore_Web.Security" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KNAUF - Generatore di Capitolati</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
+    <link href="plugins/smoke/themes/ambiente.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="stylesheets/soon.css" media="screen" rel="stylesheet" type="text/css"> -->
+    <style type="text/css">
+        .clearfix:after
+        {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body id="tag_body" runat="server">
+    <form id="frmPrincipale" runat="server">
+    <asp:ScriptManager ID="src_manager" runat="server" EnablePageMethods="true" EnableScriptGlobalization="true" EnableScriptLocalization="true">
+    </asp:ScriptManager>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                <a class="header-logo" href="#">KNAUF</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><asp:Literal ID="ltl_username" runat="server"></asp:Literal></a></li>
+                    <li class="nav-iconitem"><a href="storico_progetti.aspx" class="nav-iconitem__icon icon-storico"  data-toggle="modal" data-target=".bs-example-modal-lg">Storico progetti</a></li>
+                    <li class="nav-iconitem"><a href="cantiere.aspx" class="nav-iconitem__icon icon-identificativi" data-toggle="modal" data-target=".bs-example-modal-lg">Identificativi</a></li>
+                    <li class="nav-iconitem"><a href="#" class="nav-iconitem__icon icon-riferimenti-normativi">Riferimenti normativi</a></li>
+                    <li class="nav-iconitem"><a href="index.aspx" class="nav-iconitem__icon icon-menu">Menu</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <asp:ContentPlaceHolder ID="body" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!-- finestra modale -->
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="confirm">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="container-fluid content content-modal">
+                    <h4>Apri verifiche?</h4>
+                    <a href="verifiche_vento.aspx" class="btn btn-primary">Si</a>
+                    <a href="scelta_parete.aspx" class="btn btn-primary" id="lnk_no_verifiche">No</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fine finestra modale -->
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.js"></script>
+    <script src="javascripts/holder.js"></script>
+    <script src="javascripts/utility.js"></script>
+    <script type="text/javascript" src="plugins/smoke/smoke.js"></script>
+    <script src="javascripts/custom.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('.dropdown-toggle').dropdown()
+            $("input:text").focus(function () { $(this).select(); });
+
+            Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequestHandler);
+
+        });
+
+        function endRequestHandler(sender, args) {
+            $('.dropdown-toggle').dropdown()
+            $("input:text").focus(function () { $(this).select(); });
+            setOverflow();
+        }
+
+        jQuery(function ($) {
+            var focusedElementId = "";
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+            prm.add_beginRequest(function (source, args) {
+                var fe = document.activeElement;
+                if (fe != null) {
+                    focusedElementId = fe.id;
+                } else {
+                    focusedElementId = "";
+                }
+                //alert(focusedElementId);
+            });
+
+            prm.add_endRequest(function (source, args) {
+                if (focusedElementId != "") {
+                    $("#" + focusedElementId).focus();
+                    //alert($("#" + focusedElementId));
+                }
+            });
+        });
+
+    </script>
+    <asp:ContentPlaceHolder ID="script" runat="server">
+    </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
