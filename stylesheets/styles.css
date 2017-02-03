@@ -12380,10 +12380,10 @@ img {
 .content {
   background: #fff;
   padding: 15px 0;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 .content > div {
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
 }
 
 .overlay {
