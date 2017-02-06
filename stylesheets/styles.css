@@ -12307,7 +12307,7 @@ img {
 /*-------------------------------*/
 .splash .content {
   height: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
 .splash-logo {
