@@ -28,7 +28,6 @@
     <meta name="msapplication-TileImage" content="images/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <link href="stylesheets/styles.css" media="screen" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400i,500,600,700" rel="stylesheet">
     <link href="plugins/smoke/themes/ambiente.css" rel="stylesheet" type="text/css" />
     <!-- <link href="stylesheets/soon.css" media="screen" rel="stylesheet" type="text/css"> -->
     <style type="text/css">
@@ -44,7 +43,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body id="tag_body" runat="server">
+<body id="tag_body" runat="server" class="pagina-scheda">
     <form id="frmPrincipale" runat="server">
     <asp:ScriptManager ID="src_manager" runat="server" EnablePageMethods="true" EnableScriptGlobalization="true" EnableScriptLocalization="true">
     </asp:ScriptManager>
@@ -64,7 +63,7 @@
                     <li><a href="#"><asp:Literal ID="ltl_username" runat="server"></asp:Literal></a></li>
                     <li class="nav-iconitem"><a href="storico_progetti.aspx" class="nav-iconitem__icon icon-storico"  data-toggle="modal" data-target=".bs-example-modal-lg">Storico progetti</a></li>
                     <li class="nav-iconitem"><a href="cantiere.aspx" class="nav-iconitem__icon icon-identificativi" data-toggle="modal" data-target=".bs-example-modal-lg">Identificativi</a></li>
-                    <li class="nav-iconitem"><a href="#" class="nav-iconitem__icon icon-riferimenti-normativi">Riferimenti normativi</a></li>
+                    <li class="nav-iconitem"><a href="riferimenti_normativi.aspx" class="nav-iconitem__icon icon-riferimenti-normativi" data-toggle="modal" data-target=".bs-example-modal-lg">Riferimenti normativi</a></li>
                     <li class="nav-iconitem"><a href="index.aspx" class="nav-iconitem__icon icon-menu">Menu</a></li>
                 </ul>
             </div>

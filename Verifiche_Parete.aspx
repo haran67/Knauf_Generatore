@@ -3,6 +3,8 @@
 
 <%@ Register TagPrefix="cc" Namespace="Generatore_Classi.Controls" Assembly="Generatore_Classi" %>
 <%@ Register src="Verifiche_Opzioni.ascx" tagname="Verifiche_Opzioni" tagprefix="uc1" %>
+<%@ Register src="Scelta_Voci.ascx" tagname="Scelta_Voci" tagprefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
@@ -370,13 +372,16 @@
                     <div class="otherOneOverflowDX">
                         <nav class="project-navbar ">
                             <div class="col-sm-6 col-md-4 col-lg-4">
-                                <a href="catalogo-home.html" class="project-navbar-voice active">prosegui</a>
+                                <asp:LinkButton ID="btn_progetto" runat="server" CssClass="project-navbar-voice active"
+                                    OnClick="btn_progetto_Click">
+                                    Prosegui
+                                </asp:LinkButton>
                             </div>
                             <div class="col-sm-6 col-md-8 col-lg-8 active impostazioni yamm">
                                 <uc1:Verifiche_Opzioni ID="Verifiche_Opzioni1" runat="server" />
                             </div>
                         </nav>
-                        <div class="semafori-verifiche">
+                        <div class="semafori-verifiche" id="div_semafori" runat="server">
                             <div class="row no-gutters">
                                 <div class="col-sm-3">
                                     <span class="semaforo" id="span_verifica_completo" runat="server">COMPLETO</span>
@@ -393,7 +398,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="cat-content overflowContainerDX">
+                    <div class="cat-content overflowContainerDX" id="div_risultati" runat="server">
                         <div class="feature-editor">
                             <table class="table table-feature equal-cell-width">
                                 <tr>
@@ -936,6 +941,11 @@
                                     </table>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="cat-content overflowContainerDX" id="div_scelta_voci" runat="server" visible="false">
+                        <div class="project">
+                            <uc1:Scelta_Voci ID="Scelta_Voci" runat="server" />
                         </div>
                     </div>
                 </div>

@@ -73,6 +73,9 @@
                                                 <asp:LinkButton ID="btn_verifiche" runat="server" CommandName="VERIFICA" data-toggle="modal" data-target=".bs-example-modal-sm" CssClass="action-link">
                                                     <span class="icon icon-impostazioni"></span>
                                                 </asp:LinkButton>
+                                                <asp:Hyperlink NavigateUrl="Certificati.aspx" ID="btn_antincendio" runat="server" data-toggle="modal" data-target=".bs-example-modal-lg" CssClass="action-link">
+                                                    <span class="icon icon-certificazioni"></span>
+                                                </asp:Hyperlink>
                                             </li>
                                             <li class="feature-container" id="li_voci" runat="server">
                                                 <div class="feature">
