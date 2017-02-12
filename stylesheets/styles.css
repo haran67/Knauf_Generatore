@@ -11353,7 +11353,7 @@ input[type="radio"] .styled:checked + label::after {
   text-transform: initial;
 }
 .icon.icon-certificazioni:after {
-  content: "é";
+  content: "b";
   text-transform: initial;
 }
 .icon.icon-help:after {
