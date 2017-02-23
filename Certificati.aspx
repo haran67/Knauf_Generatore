@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Storico_Progetti.aspx.cs" Inherits="Generatore_Web.Storico_Progetti" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Certificati.aspx.cs" Inherits="Generatore_Web.fCertificati" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,32 +26,24 @@
                 <div class="corpo-tabella">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h4>Storico progetti</h4>
+                            <h4>Riferimenti Normativi</h4>
                         </div>
                     </div>
                     <div class="overflow-modal-container">
                         <div class="table-container">
                             <table class="table table-feature">
-                                <asp:Repeater ID="rpt_cantiere" runat="server" OnItemCommand="rpt_cantiere_ItemCommand"
-                                        OnItemDataBound="rpt_cantiere_ItemDataBound">
+                                <asp:Repeater ID="rpt_certificati" runat="server" OnItemCommand="rpt_certificati_ItemCommand"
+                                        OnItemDataBound="rpt_certificati_ItemDataBound">
                                     <ItemTemplate>
                                         <tr>
                                             <td class="tmiddle tleft">
-                                                <span><asp:Literal ID="ltl_ca_data_offerta" runat="server"></asp:Literal></span>
-                                                <h4><asp:Literal ID="ltl_ca_cantiere" runat="server"></asp:Literal></h4>
-                                                <h5><asp:Literal ID="ltl_ca_committente" runat="server"></asp:Literal></h5>
-                                            </td>
-                                            <td class="tmiddle tright">
-                                                <asp:Literal ID="ltl_indirizzo" runat="server"></asp:Literal>
-                                            </td>
-                                            <td class="tmiddle">
-                                                <asp:LinkButton ID="btn_del" runat="server" CommandName="DEL">
-                                                    <i class="fa fa-trash"></i>
-                                                </asp:LinkButton>
-                                                &nbsp;
-                                                <asp:LinkButton ID="btn_get" runat="server" CommandName="GET">
-                                                    <i class="fa fa-chevron-right"></i>
-                                                </asp:LinkButton>
+                                                <div class="checkbox right fullwidth checkbox-verifiche">
+                                                    <asp:CheckBox ID="chk_certificato" runat="server" />
+                                                    <label for="" id="lbl_certificato" runat="server">
+                                                        <asp:Literal ID="ltl_certificato" runat="server"></asp:Literal>
+                                                        <asp:Literal ID="ltl_certificato_key" runat="server" Visible="false"></asp:Literal>
+                                                    </label>
+                                                </div>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -61,6 +53,9 @@
                     </div>
                 </div>
                 <div class="graphic-button">
+                    <asp:LinkButton ID="btn_salva" runat="server" CssClass="button" OnClick="btn_salva_Click">
+                        <i class="fa fa-check-circle-o"></i>
+                    </asp:LinkButton>
                     <asp:LinkButton ID="btn_annulla" runat="server" CssClass="button" data-dismiss="modal">
                         <i class="fa fa-times-circle-o"></i>
                     </asp:LinkButton>
@@ -70,10 +65,5 @@
         </ContentTemplate>
     </asp:UpdatePanel>
     </form>
-    <script type="text/javascript">
-        function scegliCantiere() {
-
-        }
-    </script>
 </body>
 </html>

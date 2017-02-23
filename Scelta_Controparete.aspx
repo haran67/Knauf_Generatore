@@ -3,6 +3,8 @@
 
 <%@ Register TagPrefix="cc" Namespace="Generatore_Classi.Controls" Assembly="Generatore_Classi" %>
 <%@ Register src="Verifiche_Opzioni.ascx" tagname="Verifiche_Opzioni" tagprefix="uc1" %>
+<%@ Register src="Scelta_Voci.ascx" tagname="Scelta_Voci" tagprefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
@@ -14,7 +16,7 @@
                 <div class="col-md-6 col-xl-4 colonnaSX">
                     <nav class="project-navbar otherOneOverflowSX">
                         <div class="col-sm-12 active">
-                            <a href="#" class="project-navbar-voice">parete</a>
+                            <a href="#" class="project-navbar-voice">contropareti</a>
                         </div>
                     </nav>
                     <div class="row no-gutters sub-content-container overflowContainerSX">
@@ -36,16 +38,18 @@
                                 <tr>
                                     <td class="tab-images">
                                         <div class="radio radio-verifiche radio-image">
-                                            <input type="radio" name="tipo-parete" id="radio1" value="option2">
-                                            <label for="radio1">
+                                            <asp:RadioButton ID="rdb_cv_parete_01"  runat="server" GroupName="rdb_cv_parete" AutoPostBack="true"
+                                                OnCheckedChanged="rdb_parete_changed" AccessKey="1" />
+                                            <label for="<%=rdb_cv_parete_01.ClientID%>">
                                                 <img src="images/controparete-w625.jpg" />
                                             </label>
                                         </div>
                                     </td>
                                     <td class="tab-images">
                                         <div class="radio radio-verifiche radio-image">
-                                            <input type="radio" name="tipo-parete" id="radio2" value="option2">
-                                            <label for="radio2">
+                                            <asp:RadioButton ID="rdb_cv_parete_02" runat="server" GroupName="rdb_cv_parete"  AutoPostBack="true"
+                                                OnCheckedChanged="rdb_parete_changed" AccessKey="2" />
+                                            <label for="<%=rdb_cv_parete_02.ClientID%>">
                                                 <img src="images/controparete-w623.jpg" />
                                             </label>
                                         </div>
@@ -62,16 +66,18 @@
                                 <tr>
                                     <td class="tab-images">
                                         <div class="radio radio-verifiche radio-image">
-                                            <input type="radio" name="tipo-parete" id="radio3" value="option2">
-                                            <label for="radio3">
+                                            <asp:RadioButton ID="rdb_cv_parete_03" runat="server" GroupName="rdb_cv_parete" AutoPostBack="true"
+                                                OnCheckedChanged="rdb_parete_changed" AccessKey="3" />
+                                            <label for="<%=rdb_cv_parete_03.ClientID%>">
                                                 <img src="images/controparete-w628.jpg" />
                                             </label>
                                         </div>
                                     </td>
                                     <td class="tab-images">
                                         <div class="radio radio-verifiche radio-image">
-                                            <input type="radio" name="tipo-parete" id="radio4" value="option2">
-                                            <label for="radio4">
+                                            <asp:RadioButton ID="rdb_cv_parete_04" runat="server" GroupName="rdb_cv_parete"  AutoPostBack="true"
+                                                OnCheckedChanged="rdb_parete_changed" AccessKey="4" />
+                                            <label for="<%=rdb_cv_parete_04.ClientID%>">
                                                 <img src="images/controparete-w624.jpg" />
                                             </label>
                                         </div>
@@ -88,16 +94,18 @@
                                 <tr>
                                     <td class="tab-images">
                                         <div class="radio radio-verifiche radio-image">
-                                            <input type="radio" name="tipo-parete" id="radio5" value="option2">
-                                            <label for="radio5">
+                                            <asp:RadioButton ID="rdb_cv_parete_05" runat="server" GroupName="rdb_cv_parete" AutoPostBack="true"
+                                                OnCheckedChanged="rdb_parete_changed" AccessKey="5" />
+                                            <label for="<%=rdb_cv_parete_05.ClientID%>">
                                                 <img src="images/controparete-w626-k251.jpg" />
                                             </label>
                                         </div>
                                     </td>
                                     <td class="tab-images">
                                         <div class="radio radio-verifiche radio-image">
-                                            <input type="radio" name="tipo-parete" id="radio6" value="option2">
-                                            <label for="radio6">
+                                            <asp:RadioButton ID="rdb_cv_parete_06" runat="server" GroupName="rdb_cv_parete"  AutoPostBack="true"
+                                                OnCheckedChanged="rdb_parete_changed" AccessKey="6" />
+                                            <label for="<%=rdb_cv_parete_06.ClientID%>">
                                                 <img src="images/controparete-w611.jpg" />
                                             </label>
                                         </div>
@@ -362,7 +370,7 @@
                 <!-- fine lista catalogo -->
                 <!-- visione contenuti tab LATO DX -->
                 <div class="col-md-6 col-xl-8 colonnaDX">
-                    <nav class="project-navbar otherOneOverflowDX">
+                    <nav class="project-navbar otherOneOverflowDX hidden">
                         <div class="col-sm-12 col-md-4 col-lg-4 active">
                             <asp:LinkButton ID="btn_progetto" runat="server" CssClass="project-navbar-voice active"
                                 OnClick="btn_progetto_Click">
@@ -372,7 +380,7 @@
                     </nav>
                     <div class="cat-content overflowContainerDX">
                         <div class="project">
-
+                            <uc1:Scelta_Voci ID="Scelta_Voci" runat="server" />
                         </div>
                     </div>
                     <div class="btn-group btn-group-justified otherOneOverflowLastDX">
