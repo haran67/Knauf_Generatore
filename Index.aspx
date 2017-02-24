@@ -181,7 +181,8 @@
                                 <span class="icon icon-annulla"></span>Annulla
                             </asp:LinkButton>
                             <a href="#" class="btn btn-primary with-icon"><span class="icon icon-anteprima">
-                                </span>Anteprima</a> <a href="#" class="btn btn-primary with-icon"><span class="icon icon-riepilogo">
+                                </span>Anteprima</a> 
+                            <a href="Riepilogo_Prezzi.aspx" class="btn btn-primary with-icon"><span class="icon icon-riepilogo">
                                 </span>Riepilogo prezzi</a>
                         </div>
                     </div>

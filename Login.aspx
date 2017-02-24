@@ -63,9 +63,9 @@
         <div class="overlay">
             <form runat="server" id="form_login" class="form-login">
                 <div class="splash-logo">
-                    <a href="catalogo-home.html">
+                    <a href="#">
                         <h1>
-                            KNAUF - Generatore di Capitolati</h1>
+                            KNAUF - EasyKap</h1>
                     </a>
 
                     <div class="row">

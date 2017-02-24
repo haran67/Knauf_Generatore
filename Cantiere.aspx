@@ -48,6 +48,34 @@
                                 <table class="table table-feature tright">
                                     <tr>
                                         <td style="width: 30%">
+                                            Provincia
+                                        </td>
+                                        <td style="padding:0px!Important;">
+                                            <table class="table table-feature tright">
+                                                <tr>
+                                                    <td>             
+                                                        <asp:DropDownList ID="ddl_ca_provincia_cod" runat="server" OnSelectedIndexChanged="ddl_ca_provincia_cod_SelectedIndexChanged" AutoPostBack="true">
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                    <td>
+                                                        Comune
+                                                    </td>
+                                                    <td>
+                                                        <asp:DropDownList ID="ddl_ca_comune_cod" runat="server">
+                                                        </asp:DropDownList>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table class="table table-feature tright">
+                                    <tr>
+                                        <td style="width: 30%">
                                             Localit&agrave;
                                         </td>
                                         <td>
@@ -107,7 +135,7 @@
                     <asp:LinkButton ID="LinkButton1" runat="server" CssClass="button" data-dismiss="modal" OnClientClick="salvaCantiere();">
                         <i class="fa fa-check-circle-o"></i>
                     </asp:LinkButton>
-                    <asp:LinkButton ID="btn_salva" runat="server" CssClass="button" data-dismiss="modal" OnClick="btn_salva_Click" Visible="false">
+                    <asp:LinkButton ID="btn_salva" runat="server" CssClass="button" OnClick="btn_salva_Click" Visible="false">
                         <i class="fa fa-check-circle-o"></i>
                     </asp:LinkButton>
                     <asp:LinkButton ID="btn_annulla" runat="server" CssClass="button" data-dismiss="modal">
@@ -122,7 +150,7 @@
     <script type="text/javascript">
         function salvaCantiere() {
 
-            PageMethods.SalvaCantiere($('#<%=txt_ca_cantiere.ClientID%>').val(), $('#<%=txt_ca_committente.ClientID%>').val(), $('#<%=txt_ca_data_offerta.ClientID%>').val(), $('#<%=txt_ca_funzionario.ClientID%>').val(), $('#<%=txt_ca_indirizzo.ClientID%>').val(), $('#<%=txt_ca_localita.ClientID%>').val(), $('#<%=txt_ca_note.ClientID%>').val(), PMSuccess, PMFailure);
+            PageMethods.SalvaCantiere($('#<%=txt_ca_cantiere.ClientID%>').val(), $('#<%=txt_ca_committente.ClientID%>').val(), $('#<%=txt_ca_data_offerta.ClientID%>').val(), $('#<%=txt_ca_funzionario.ClientID%>').val(), $('#<%=txt_ca_indirizzo.ClientID%>').val(), $('#<%=txt_ca_localita.ClientID%>').val(), $('#<%=txt_ca_note.ClientID%>').val(), $('#<%=ddl_ca_provincia_cod.ClientID%>').val(), $('#<%=ddl_ca_comune_cod.ClientID%>').val(), PMSuccess, PMFailure);
         }
     </script>
 </body>
