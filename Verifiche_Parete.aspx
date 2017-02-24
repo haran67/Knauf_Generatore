@@ -64,6 +64,7 @@
                                                 </td>
                                                 <td class="tleft">
                                                     <asp:DropDownList ID="ddl_cv_parete_posizione" runat="server" OnSelectedIndexChanged="ddl_cv_parete_posizione_SelectedIndexChanged" AutoPostBack="true">
+                                                        <asp:ListItem Text="" Value=""></asp:ListItem>
                                                         <asp:ListItem Text="Interna alla costruzione" Value="1"></asp:ListItem>
                                                         <asp:ListItem Text="Perimetrale" Value="2"></asp:ListItem>
                                                     </asp:DropDownList>
